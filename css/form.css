@@ -2,7 +2,10 @@ form h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   text-transform: capitalize;
-  font-weight: normal;
+  ffont-weight: bold;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .form-control {
@@ -12,11 +15,10 @@ form h2 {
 
 .form-input {
   width: 100%;
-  padding: 0.375rem 0.75rem;
-  border-radius: 0;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
 }
 
 .form-input::placeholder {
@@ -26,15 +28,16 @@ form h2 {
 .form-control .btn {
   cursor: pointer;
   color: #fff;
-  background: #06b6d4;
+  background: #0c2e34;
   border: transparent;
   border-radius: 0;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
   padding: 0.375rem 0.75rem;
   text-transform: capitalize;
+  transition: all 0.3s ease;
 }
 
 .form-control .btn:hover {
-  background: #0e7490;
+  background: #072475;
 }
