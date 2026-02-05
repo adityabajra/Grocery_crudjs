@@ -5,11 +5,11 @@ Description: This project is a functional grocery list app to add, update and re
 
 Key Features:
 
-CRUD Functionality: Add, Read, Update, and Delete items.
+CRUD Functionality: Add, Update, and Delete items.
 Data Persistence: Items stay saved via localStorage on refresh.
 Dynamic UI: Clean CSS layouts with responsive action alerts.
 
-🛠️ Built With
+Built With
 HTML5
 CSS3
 JavaScript 
