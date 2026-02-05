@@ -1,9 +1,9 @@
-import { groceryItems } from "./data.js";
 import { createItems } from "./items.js";
 import { createForm } from "./form.js";
 
-let items = groceryItems;
+let items = getLocalStorage();
 let editId = null;
+
 function render() {
   const app = document.getElementById("app");
   app.innerHTML = "";
@@ -26,7 +26,7 @@ export function updateItemName(newName) {
   });
   editId = null;
   render();
-  setTimeout(() => alert("Item Updated Successfully!"), 0);
+  setLocalStorage(items);
 }
 function generateId() {
   return Date.now().toString(36) + Math.random().toString(36).substr(2);
@@ -47,13 +47,14 @@ export function addItem(itemName) {
     id: generateId(),
   };
   items = [...items, newItem];
+
+  setLocalStorage(items);
   render();
-  setTimeout(() => alert("Item Added Successfully!"), 0);
 }
 export function removeItem(itemId) {
   items = items.filter((item) => item.id !== itemId);
   render();
-  setTimeout(() => alert("Item Deleted Successfully!"), 0);
+  setLocalStorage(items);
 }
 export function setEditId(itemId) {
   editId = itemId;
@@ -65,4 +66,14 @@ export function setEditId(itemId) {
       input.focus();
     }
   }, 0);
+}
+function getLocalStorage() {
+  const list = localStorage.getItem("grocery-list");
+  if (list) {
+    return JSON.parse(list);
+  }
+  return [];
+}
+function setLocalStorage(itemsArray) {
+  localStorage.setItem("grocery-list", JSON.stringify(itemsArray));
 }
